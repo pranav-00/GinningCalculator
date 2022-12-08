@@ -12,3 +12,17 @@ self.addEventListener("fetch", e => {
         })
     )
 })
+self.addEventListener('activate', (event) => {
+    const ca = [];
+    ca.push(static);
+
+    event.waitUntil(
+        caches.keys().then((cacheNames) => Promise.all(
+            cacheNames.map((cacheName) => {
+                if (!ca.includes(cacheName)) {
+                    return caches.delete(cacheName)
+                }
+            })
+        ))
+    )
+})
