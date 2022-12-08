@@ -5,24 +5,31 @@ self.addEventListener("install", e => {
         })
     );
 });
-self.addEventListener("fetch", e => {
-    e.respondWith(
-        caches.match(e.request).then(Response => {
-            return Response || fetch(e.request)
+// self.addEventListener("fetch", e => {
+//     e.respondWith(
+//         caches.match(e.request).then(Response => {
+//             return Response || fetch(e.request)
+//         })
+//     )
+// })
+self.addEventListener("fetch", event => {
+    event.respondWith(
+        caches.open('static').then(cache => {
+            return cache.match(event.request).then(response => {
+                const fetchPromise = fetch(event.request)
+                    .then(networkResponse => {
+
+                        cache.put(event.request, networkResponse.clone());
+
+                        return networkResponse;
+                    })
+                return response || fetchPromise
+            })
         })
     )
 })
-self.addEventListener('activate', (event) => {
-    const ca = [];
-    ca.push('static');
 
-    event.waitUntil(
-        caches.keys().then((cacheNames) => Promise.all(
-            cacheNames.map((cacheName) => {
-                if (!ca.includes(cacheName)) {
-                    return caches.delete(cacheName)
-                }
-            })
-        ))
-    )
-})
+
+
+
+
