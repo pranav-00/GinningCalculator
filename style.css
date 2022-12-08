@@ -409,3 +409,7 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.ans {
+    font-size: 20px;
+}
