@@ -14,7 +14,7 @@ self.addEventListener("fetch", e => {
 })
 self.addEventListener('activate', (event) => {
     const ca = [];
-    ca.push(static);
+    ca.push('static');
 
     event.waitUntil(
         caches.keys().then((cacheNames) => Promise.all(
