@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <!-- App title -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Ginning Calculator</title>
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo.png">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header class="header">
+        <!-- Logo -->
+        <a href="#" class="logo">PB</a>
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Ginning</a></li>
+                <li><a href="oil.html">Oil Mill</a> </li>
+                <li><a href="export.html">Exports</a></li>
+                <li><a href="conv.html">Conversion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main content -->
+    <div class="main">
+        <div class="container">
+            <form action="action_page.php">
+                <div class="row">
+                    <div class="col-60">
+                        <label id="lable" for="cent">Cents/LB to Indian Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <!-- <input type="number" id="exportrate2" name="exportrate2"  > -->
+                    </div>
+                    <div class="col-20" id="switch">
+                        <label class="switch" onclick="">
+                            <input oninput="conv1()" name="cent" id="cent" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-50">
+                        <label id="lable11" for="lable12">US Cents/LB</label>
+                    </div>
+                    <div class="col-65">
+                        <input oninput="conv1()" type="number" id="lable12" name="lable12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <label id="lable21" for="lable22">Exchange Rate (USD/INR)</label>
+                    </div>
+                    <div class="col-65">
+                        <input oninput="conv1()" type="number" id="lable22" name="lable22">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <label id="lable31" for="lable32">INR/Candy</label>
+                    </div>
+                    <div class="col-65">
+                        <input oninput="conv1()" type="number" id="lable32" name="lable32" disabled>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="1" name="11" value="1" checked>
+                        <label for="1" id="lable33">Cents/LB To Indian Rate</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="2" name="11" value="2">
+                        <label for="2" id="lable33">Chinese Rate To Indian Rate</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="3" name="11" value="3">
+                        <label for="3" id="lable33">Pakistan Rate To Indian Rate</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="4" name="11" value="4">
+                        <label for="4" id="lable33">Punjab Rate To Indian Rate</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-70">
+                        <input oninput="conv1()" type="radio" id="5" name="11" value="5">
+                        <label for="5" id="lable33">170 Kgs Rate To Indian Rate</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

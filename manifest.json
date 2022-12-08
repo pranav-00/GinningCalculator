@@ -1,0 +1,16 @@
+{
+    "name": "Ginning Calculator",
+    "short_name": "Ginning Calculator",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "icons": [
+        {
+            "src": "logo.png",
+            "type": "image/png",
+            "sizes": "723x723",
+            "purpose": "maskable"
+        }
+    ]
+}

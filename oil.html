@@ -1,0 +1,307 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <<meta name="theme-color" content="#000000">
+        <!-- App title -->
+        <link rel="icon" href="logo.png" type="image/png">
+        <title>Ginning Calculator</title>
+        <!-- Link CSS file -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="logo.png">
+</head>
+
+<body id="body">
+    <!-- Navigation bar -->
+    <header class="header">
+        <!-- Logo -->
+        <a href="#" class="logo">PB</a>
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Ginning</a></li>
+                <li><a href="oil.html">Oil Mill</a> </li>
+                <li><a href="export.html">Exports</a></li>
+                <li><a href="conv.html">Conversion</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="fbdiv">
+            <button class="fb cur" onclick="data1()">Oil Mill Forward</button>
+            <button class="fb" onclick="data2()">Oil Mill Reverse</button>
+        </div>
+
+    </header>
+    <!-- Main content -->
+    <div class="main">
+        <div class="container" id="1">
+            <form action="action_page.php">
+                <div class="row">
+                    <div class="col-40">
+                        <label id="purel1" for="pure1">Cents/LB</label>
+                    </div>
+                    <div class="col-75">
+                        <!-- <input type="number" id="exportrate2" name="exportrate2"  > -->
+                    </div>
+                    <div class="col-20" id="sw1">
+                        <label class="switch" onclick="oil1()">
+                            <input name="pure1" id="pure1" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cottonseed1">Cotton Seed</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="cottonseed1" name="cottonseed1">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Quintal</label>
+                    </div>
+                </div>
+                <div class="row 1 hide">
+                    <div class="col-40">
+                        <label for="hullrate1">Hull Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="hullrate1" name="hullrate1">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Quintal</label>
+                    </div>
+                </div>
+                <div class="row 1 hide">
+                    <div class="col-40">
+                        <label for="hullqty1">Hull Qty.</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="hullqty1" name="hullqty1">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="expenses1">Expenses</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="expenses1" name="expenses1">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Quintal</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="oilrate1">Oil Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="oilrate1" name="oilrate1">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./10 Kgs</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="oil1">Oil</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="oil1" name="oil1">
+                    </div>
+                    <div class="col-20">
+                        <label id="oilunit1">%</label>
+                    </div>
+                </div>
+                <div class="row 11">
+                    <div class="col-40">
+                        <label for="oilcake1">Oil Cake</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="oilcake1" name="oilcake1">
+                    </div>
+                    <div class="col-20">
+                        <label>%</label>
+                    </div>
+                </div>
+                <div class="row 1 hide">
+                    <div class="col-40">
+                        <label for="shortage1">Shortage</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="shortage1" name="shortage1">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="pakingsize1">Packing Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil4()" type="number" id="pakingsize1" name="pakingsize1">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cost1"><b>Oil Cake Cost</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="cost1" for="cost1"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Bag</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container hide" id="2">
+            <form action="action_page.php">
+                <div class="row">
+                    <div class="col-40">
+                        <label id="purel2" for="pure2">Cents/LB</label>
+                    </div>
+                    <div class="col-75">
+                        <!-- <input type="number" id="exportrate2" name="exportrate2"  > -->
+                    </div>
+                    <div class="col-20" id="sw2">
+                        <label class="switch" onclick="oil2()">
+                            <input name="pure2" id="pure2" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cost2">Oil Cake Cost</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="cost2" name="cost2">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Bag</label>
+                    </div>
+                </div>
+                <div class="row 2 hide">
+                    <div class="col-40">
+                        <label for="hullrate2">Hull Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="hullrate2" name="hullrate2">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Quintal</label>
+                    </div>
+                </div>
+                <div class="row 2 hide">
+                    <div class="col-40">
+                        <label for="hullqty2">Hull Qty.</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="hullqty2" name="hullqty2">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="expenses2">Expenses</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="expenses2" name="expenses2">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Quintal</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="oilrate2">Oil Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="oilrate2" name="oilrate2">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./10 Kgs</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="oil2">Oil</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="oil2" name="oil2">
+                    </div>
+                    <div class="col-20">
+                        <label id="oilunit2">%</label>
+                    </div>
+                </div>
+                <div class="row 22">
+                    <div class="col-40">
+                        <label for="oilcake2">Oil Cake</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="oilcake2" name="oilcake2">
+                    </div>
+                    <div class="col-20">
+                        <label>%</label>
+                    </div>
+                </div>
+                <div class="row 2 hide">
+                    <div class="col-40">
+                        <label for="shortage2">Shortage</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="shortage2" name="shortage2">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="pakingsize2">Paking Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="oil5()" type="number" id="pakingsize2" name="pakingsize2">
+                    </div>
+                    <div class="col-20">
+                        <label>Kgs.</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cottonseed2"><b>Cotton Seed</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="cottonseed2"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Quintal</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="screen.js"></script>
+</body>
+
+</html>

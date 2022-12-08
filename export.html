@@ -1,0 +1,170 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <!-- App title -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Ginning Calculator</title>
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo.png">
+</head>
+
+<body id="body">
+    <!-- Navigation bar -->
+    <header class="header">
+        <!-- Logo -->
+        <a href="#" class="logo">PB</a>
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu" onclick="export3()" />
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Ginning</a></li>
+                <li><a href="oil.html">Oil Mill</a> </li>
+                <li><a href="export.html">Exports</a></li>
+                <li><a href="conv.html">Conversion</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="fbdiv">
+            <button class="fb cur" onclick="data1()">Export Forward</button>
+            <button class="fb" onclick="data2()">Export Reverse</button>
+        </div>
+
+    </header>
+    <!-- Main content -->
+    <div class="main">
+        <div class="container" id="1">
+            <form action="action_page.php">
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cottonrate1">Cotton Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export3()" type="number" id="cottonrate1" name="cottonrate1">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Candy</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="expenses1">Expenses</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export3()" type="number" id="expenses1" name="expenses1">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Candy</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="exchangerate1">Exchange Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export3()" type="number" id="exchangerate1" name="exchangerate1">
+                    </div>
+                    <div class="col-20">
+                        <label>USD/INR</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="cents"><b>Export Rate</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="cents" for="cents"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>Cents/LB</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="usd"><b>Export Rate</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="usd" for="usd"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>USD/Kg</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container hide" id="2">
+            <form action="action_page.php">
+                <div class="row">
+                    <div class="col-40">
+                        <label id="lable" for="cent">Cents/LB</label>
+                    </div>
+                    <div class="col-75">
+                        <!-- <input type="number" id="exportrate2" name="exportrate2"  > -->
+                    </div>
+                    <div class="col-20" id="switch">
+                        <label class="switch" onclick="export1()">
+                            <input name="cent" id="cent" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="exportrate2">Export Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export4()" type="number" id="exportrate2" name="exportrate2">
+                    </div>
+                    <div class="col-20">
+                        <label id="lable2">Cents/LB</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="expenses2">Expenses</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export4()" type="number" id="expenses2" name="expenses2">
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Candy</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="exchangerate2">Exchange Rate</label>
+                    </div>
+                    <div class="col-75">
+                        <input oninput="export4()" type="number" id="exchangerate2" name="exchangerate2">
+                    </div>
+                    <div class="col-20">
+                        <label>USD/INR</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="realisation"><b>Realisation</b></label>
+                    </div>
+                    <div class="col-75">
+                        <label id="realisation" for="realisation"><b>0</b></label>
+                    </div>
+                    <div class="col-20">
+                        <label>Rs./Candy</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="screen.js"></script>
+</body>
+
+</html>
