@@ -62,6 +62,7 @@ function oil1() {
         z[2].classList.remove('hide')
         document.getElementsByClassName('11')[0].classList.add('hide')
         document.getElementById('oilunit1').innerText = "Kgs."
+        document.getElementById('purel1').innerText = "Calculate Mix"
     } else {
         let z = document.getElementsByClassName('1')
         z[0].classList.add('hide')
@@ -69,6 +70,7 @@ function oil1() {
         z[2].classList.add('hide')
         document.getElementsByClassName('11')[0].classList.remove('hide')
         document.getElementById('oilunit1').innerText = "%"
+        document.getElementById('purel1').innerText = "Calculate Pure"
     }
     oil4();
 }
@@ -79,6 +81,7 @@ function oil2() {
         z[1].classList.remove('hide')
         z[2].classList.remove('hide')
         document.getElementById('oilunit2').innerText = "Kgs."
+        document.getElementById('purel2').innerText = "Calculate Mix"
         document.getElementsByClassName('22')[0].classList.add('hide')
     } else {
         let z = document.getElementsByClassName('2')
@@ -87,6 +90,7 @@ function oil2() {
         z[2].classList.add('hide')
         document.getElementById('oilunit2').innerText = "%"
         document.getElementsByClassName('22')[0].classList.remove('hide')
+        document.getElementById('purel2').innerText = "Calculate Pure"
     }
     oil5()
 }

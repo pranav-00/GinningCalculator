@@ -236,6 +236,10 @@ textarea {
     resize: vertical;
 }
 
+input[type=number] {
+    font-size: 20px;
+}
+
 /* Style the label to display next to the inputs */
 label {
     padding: 12px 12px 12px 0;
@@ -279,6 +283,12 @@ label {
 .col-65 {
     float: right;
     width: 45%;
+    margin-top: 6px;
+}
+
+.col-25 {
+    float: right;
+    width: 25%;
     margin-top: 6px;
 }
 
